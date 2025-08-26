@@ -42,7 +42,7 @@ Follow these instructions to set up and run the project on your local machine.
 
 First, clone the project from your GitHub repository:
 ```bash
-git clone [https://github.com/notSure-ded/Travel-DJ.git](https://github.com/notSure-ded/Travel-DJ.git)
+git clone https://github.com/notSure-ded/Travel-DJ.git
 cd Travel DJ
 ```
 
@@ -124,7 +124,7 @@ To add travel options for users to book, you need to use the admin panel.
 
 ### Admin Credentials for Testing
 
-For evaluation purposes, you can use the following credentials to log in to the admin panel on the live site:
+For evaluation purposes, you can use the following credentials to log in to the admin panel on the live site only:
 
 * **Username:** `kunal`
 * **Password:** `Kunal@567`
