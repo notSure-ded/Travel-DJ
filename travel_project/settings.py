@@ -2,7 +2,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-your-secret-key-for-the-project' # Replace with a real secret key
+SECRET_KEY = 'Example' 
 
 DEBUG = True
 
@@ -15,7 +15,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'travel', # Our travel application
+    'travel', 
 ]
 
 MIDDLEWARE = [
@@ -75,5 +75,4 @@ USE_TZ = True
 STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# This tells Django where to redirect users when they need to log in.
 LOGIN_URL = 'login'
