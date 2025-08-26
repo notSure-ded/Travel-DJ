@@ -1,0 +1,14 @@
+{% extends 'travel/base.html' %}
+{% block content %}
+<div class="row justify-content-center"><div class="col-md-8"><div class="card">
+    <div class="card-header"><h2>Cancel Booking</h2></div>
+    <div class="card-body">
+        <p>Are you sure you want to cancel this booking?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Yes, Cancel</button>
+            <a href="{% url 'my_bookings' %}" class="btn btn-secondary">No, Go Back</a>
+        </form>
+    </div>
+</div></div></div>
+{% endblock %}

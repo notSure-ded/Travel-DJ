@@ -1,0 +1,36 @@
+{% extends 'travel/base.html' %}
+{% block content %}
+<h2 class="mb-4">Available Travel Options</h2>
+<div class="card card-body mb-4">
+    <form method="get" class="row g-3">
+        <div class="col-md-3">{{ form.type.label_tag }} {{ form.type }}</div>
+        <div class="col-md-3">{{ form.source.label_tag }} {{ form.source }}</div>
+        <div class="col-md-3">{{ form.destination.label_tag }} {{ form.destination }}</div>
+        <div class="col-md-2">{{ form.date.label_tag }} {{ form.date }}</div>
+        <div class="col-md-1 d-flex align-items-end"><button type="submit" class="btn btn-primary w-100">Filter</button></div>
+    </form>
+</div>
+<div class="row">
+    {% for option in options %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ option.type }} from {{ option.source }} to {{ option.destination }}</h5>
+                <p class="card-text">
+                    <strong>Date:</strong> {{ option.date_time|date:"Y-m-d H:i" }}<br>
+                    <strong>Price:</strong> ${{ option.price }}<br>
+                    <strong>Seats Left:</strong> {{ option.available_seats }}
+                </p>
+                <a href="{% url 'book_travel' option.travel_id %}" class="btn btn-success mt-auto">Book Now</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>No travel options match your criteria.</p>
+    {% endfor %}
+</div>
+<style>
+    .card-body form div { display: flex; flex-direction: column; }
+    .card-body form input, .card-body form select { width: 100%; padding: 0.375rem 0.75rem; border: 1px solid #ced4da; border-radius: 0.25rem; }
+</style>
+{% endblock %}
